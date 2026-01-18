@@ -11,8 +11,8 @@ class Settings(BaseSettings):
 
     model_config = SettingsConfigDict(env_file=".env", extra="ignore")
 
-    # Hier kommen später die AI-Keys rein
-    # OPENAI_API_KEY: str = os.getenv("OPENAI_API_KEY")
+    # GROQ AI_Keys
+    GROQ_API_KEY: str = os.getenv("OPENAI_API_KEY")
 
 # Singleton-Instanz der Settings
 settings = Settings()
