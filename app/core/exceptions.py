@@ -11,7 +11,7 @@ def setup_exception_handlers(app: FastAPI):
     @app.exception_handler(ValidationError)
     async def validation_exception_handler(request: Request, exc: ValidationError):
         return JSONResponse(
-            status_code=status.HTTP_422_UNPROCESSABLE_FORMAT,
+            status_code=status.HTTP_422_UNPROCESSABLE_ENTITY,
             content={
                 "error_code": "VALIDATION_ERROR",
                 "message": "Eingabedaten ungültig",

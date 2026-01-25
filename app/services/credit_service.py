@@ -8,21 +8,18 @@ class CreditService:
         self.max_limit = settings.LOAN_MAX_LIMIT
 
     async def check_loan(self, loan: LoanRequest) -> LoanResponse:
-        # 1. Harte Regelprüfung
-        is_approved = loan.requested_amount <= self.max_limit
+        # KI-Analyse abrufen
+        ai_result = await ai_service_instance.analyze_loan_risk(loan)
 
-        # 2. KI-Zusatzprüfung
-        ai_comment = await ai_service_instance.analyze_loan_risk(
-            loan.client_name,
-            loan.requested_amount
-        )
-
-        status_msg = "Genehmigt" if is_approved else "Abgelehnt"
+        # Logik basierend auf den Objekt_Attributen
+        is_approved_by_limit = loan.requested_amount <= self.max_limit
+        final_approval = is_approved_by_limit and ai_result.rating not in ["D", "F"]
 
         return LoanResponse(
-            is_approved=is_approved,
-            message=f"{status_msg}. KI-Einschätzung: {ai_comment}",
-            limit_used=self.max_limit
+            is_approved = final_approval,
+            message = ai_result.reasoning,
+            limit_used = self.max_limit,
+            rating = ai_result.rating
         )
 
 # Singleton-Instanz
