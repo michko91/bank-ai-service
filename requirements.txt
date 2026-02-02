@@ -1,6 +1,7 @@
 fastapi
 uvicorn
-pydantic[email]
+pydantic
 pydantic-settings
-python-dotenv
-langchain
+langchain-groq
+sqlmodel
+psycopg2-binary

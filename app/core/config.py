@@ -6,6 +6,7 @@ from pydantic_settings import BaseSettings, SettingsConfigDict
 class Settings(BaseSettings):
     PROJECT_NAME: str = "Bank AI Service"
     PROJECT_VERSION: str = "1.0.0"
+    DATABASE_URL: str
     # Standartwert 10000, falls nichts in der env. steht
     LOAN_MAX_LIMIT: float = float(os.getenv("LOAN_MAX_LIMIT", 10000.0))
 
