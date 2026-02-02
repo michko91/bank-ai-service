@@ -18,18 +18,10 @@ Das System ist vollständig containerisiert und verfügt über eine funktioniere
 * **Validation:** Pydantic V2 Settings & Schemas
 
 ## 🏗 Projektstruktur
-```text
-bank-ai-service/
-├── app/
-│   ├── api/        # Endpunkte & Router
-│   ├── core/       # Config, Datenbank-Setup & Exceptions
-│   ├── models/     # SQLModel Datenbank-Tabellen
-│   ├── schemas/    # Pydantic Modelle für API Validation
-│   └── services/   # Business Logic & AI-Integration
-├── Dockerfile      # Backend Container-Definition
-├── docker-compose.yml # Multi-Container Orchestrierung
-├── main.py         # Entrypoint der App
-└── .env            # Umgebungsvariablen (API Keys, DB-URL)
+- **app/**: Core-Logik, Models, Schemas und Services.
+- **Dockerfile**: Backend Container-Definition.
+- **docker-compose.yml**: Orchestrierung von Backend und Datenbank.
+- **main.py**: Zentraler Entrypoint der Anwendung.
 
 ## 🚦 Schnellstart
 
