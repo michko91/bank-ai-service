@@ -35,9 +35,9 @@ Das System ist vollständig containerisiert und verfügt über eine funktioniere
    docker compose up --build
 4. **API & Monitoring:**
    ```env
-   * Backend-Basis: http://localhost:8000
-   * Interaktive Dokumentation (Swagger UI): http://localhost:8000/docs
-   * Admin-Endpoint (Gespeicherte Anträge): http://localhost:8000/applications
+   - Backend-Basis: http://localhost:8000
+   - Interaktive Dokumentation (Swagger UI): http://localhost:8000/docs
+   - Admin-Endpoint (Gespeicherte Anträge): http://localhost:8000/applications
 
 ## 🗺 Roadmap
 * [x] **Backend-Core**: FastAPI Setup mit asynchroner Architektur und Exception-Handling.
