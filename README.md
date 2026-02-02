@@ -33,3 +33,17 @@ Das System ist vollständig containerisiert und verfügt über eine funktioniere
 3. **Container starten:** Führe diesen Befehl im Projektverzeichnis aus, um das Image zu bauen und alle Dienste zu starten:
    ```env
    docker compose up --build
+4. **API & Monitoring:**
+   ```env
+   - Backend-Basis: http://localhost:8000
+   - Interaktive Dokumentation (Swagger UI): http://localhost:8000/docs
+   - Admin-Endpoint (Gespeicherte Anträge): http://localhost:8000/applications
+
+## 🗺 Roadmap
+- [x] **Backend-Core**: FastAPI Setup mit asynchroner Architektur und Exception-Handling.
+- [x] **KI-Integration**: Risikoanalyse-Logik via Groq Cloud (Llama 3).
+- [x] **Infrastruktur**: Vollständige Containerisierung mit Docker & Docker Compose.
+- [x] **Persistenz**: PostgreSQL-Anbindung und automatische Tabellen-Initialisierung via SQLModel.
+- [ ] **Frontend (Next Step)**: Entwicklung eines modernen Dashboards mit React, Vite & Tailwind CSS.
+- [ ] **Features**: Implementierung von Such-, Filter- und Löschfunktionen für Kreditanträge.
+- [ ] **Security**: Absicherung des Admin-Bereichs mittels JWT-Authentifizierung.
