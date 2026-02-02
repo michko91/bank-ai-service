@@ -1,24 +1,32 @@
-# bank-ai-service
-An enterprise-grade Python backend designed to bridge the gap between traditional banking logic and modern AI capabilities.
+# 🏦 Bank-AI Enterprise Service
 
-## 🎯 Project Vision
-This project demonstrates how to build a scalable, maintainable, and secure microservice for financial institutions. It focuses on automating the loan eligibility process using a modular architecture that will soon be enhanced with Large Language Models (LLMs).
+Ein modernes Kreditprüfungssystem, das harte Geschäftsregeln mit künstlicher Intelligenz (Groq/Llama 3) kombiniert, um Kreditanträge in Echtzeit zu bewerten und revisionssicher in einer PostgreSQL-Datenbank zu speichern.
 
-## 🏗️ Architecture & Standards
-* **FastAPI Framework:** High-performance REST API development.
-* **Production-Grade Structure:** Separation of concerns (API, Services, Schemas, Core).
-* **Robust Validation:** Data integrity ensured via Pydantic models (DTOs).
-* **Dependency Injection:** Decoupled business logic for high testability.
-* **Environment Management:** Secure configuration via `.env` and `python-dotenv`.
+## 🚀 Status Quo
+Das System ist vollständig containerisiert und verfügt über eine funktionierende End-to-End-Pipeline:
+- **API:** FastAPI mit asynchronem Lifespan-Management.
+- **AI-Integration:** Automatisierte Risikoanalyse via Groq Cloud API.
+- **Persistence:** SQLModel (ORM) mit einer PostgreSQL-Datenbank im Docker-Verbund.
+- **Infrastruktur:** Orchestrierung über Docker Compose.
 
-## 🛠️ Tech Stack
-- **Language:** Python 3.14+
-- **API:** FastAPI, Uvicorn
-- **Validation:** Pydantic
-- **Future AI Stack:** LangChain / Groq Integration
+## 🛠 Tech Stack
+* **Backend:** Python 3.11, FastAPI
+* **Database:** PostgreSQL 15
+* **ORM:** SQLModel (Pydantic + SQLAlchemy)
+* **AI:** Groq SDK (Llama 3 Modelle)
+* **DevOps:** Docker, Docker Compose
+* **Validation:** Pydantic V2 Settings & Schemas
 
-## 🚀 Roadmap
-- [x] Phase 1: Modular Microservice Setup & DI Pattern
-- [ ] Phase 2: Integration of AI-driven Risk Assessment (LangChain)
-- [ ] Phase 3: RAG (Retrieval-Augmented Generation) for Banking Documents
-- [ ] Phase 4: CI/CD Pipeline & Dockerization
+## 🏗 Projektstruktur
+```text
+bank-ai-service/
+├── app/
+│   ├── api/        # Endpunkte & Router
+│   ├── core/       # Config, Datenbank-Setup & Exceptions
+│   ├── models/     # SQLModel Datenbank-Tabellen
+│   ├── schemas/    # Pydantic Modelle für API Validation
+│   └── services/   # Business Logic & AI-Integration
+├── Dockerfile      # Backend Container-Definition
+├── docker-compose.yml # Multi-Container Orchestrierung
+├── main.py         # Entrypoint der App
+└── .env            # Umgebungsvariablen (API Keys, DB-URL)
