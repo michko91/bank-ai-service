@@ -15,7 +15,7 @@ This project demonstrates how to build a scalable, maintainable, and secure micr
 - **Language:** Python 3.14+
 - **API:** FastAPI, Uvicorn
 - **Validation:** Pydantic
-- **Future AI Stack:** LangChain / OpenAI Integration
+- **Future AI Stack:** LangChain / Groq Integration
 
 ## 🚀 Roadmap
 - [x] Phase 1: Modular Microservice Setup & DI Pattern
