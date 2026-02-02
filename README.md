@@ -31,4 +31,5 @@ Das System ist vollständig containerisiert und verfügt über eine funktioniere
    GROQ_API_KEY=dein_key_hier
    DATABASE_URL=postgresql://user:password@db:5432/bank_db
 3. **Container starten:** Führe diesen Befehl im Projektverzeichnis aus, um das Image zu bauen und alle Dienste zu starten:
-   ```docker compose up --build
+   ```env
+   docker compose up --build
