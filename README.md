@@ -30,3 +30,11 @@ bank-ai-service/
 ├── docker-compose.yml # Multi-Container Orchestrierung
 ├── main.py         # Entrypoint der App
 └── .env            # Umgebungsvariablen (API Keys, DB-URL)
+
+## 🚦 Schnellstart
+
+1. **Repository klonen**
+2. **Umgebungsvariablen konfigurieren:** Erstelle eine `.env` Datei im Hauptverzeichnis mit folgendem Inhalt:
+   ```env
+   GROQ_API_KEY=dein_key_hier
+   DATABASE_URL=postgresql://user:password@db:5432/bank_db
